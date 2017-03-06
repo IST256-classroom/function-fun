@@ -1,7 +1,8 @@
 '''
-We are going to write an advanced game of guess the work to demonstrate how we use funtions
+We are going to write an advanced game of guess the word to demonstrate how we use funtions
 Below are 7 functions that are used for the main program. Each Group needs to define their function
-with the right inputs and it needs to return the proper value. The function name is given
+with the right inputs and it needs to return the proper value. The function name is given along with what inputs
+it needs and what it should return.
 '''
 
 # Import statements are always at the top
