@@ -92,6 +92,9 @@ and return the new string.
 '''
 # Group 6 Function Here
 
+def save_guess(str_1, str_2):
+    new_str = (str_2 + str_1)
+    return(new_str)
 
 
 '''
