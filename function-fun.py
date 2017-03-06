@@ -48,6 +48,16 @@ them to see if they are equal. Return True if the are, False if they aren't
 '''
 # Group 2 Function Here
 
+def check_guessed_word(x,y):
+    if x==y:
+        print('true')
+    else:
+        print('false')
+    return check_guessed_word
+x = input('please enter text:')
+y = input('please enter text:')
+result=check_guessed_word(x,y)
+
 
 '''
 Group 3:
