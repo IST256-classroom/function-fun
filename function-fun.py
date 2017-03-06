@@ -112,7 +112,8 @@ def main():
                 break
     
     print("Nice Work!")
-    print("You guessed the word: {} in {} trys".format(random_word, trys))
+    # Print the result like "You guessed the word: 'example' in 10 trys" using format!
+    # Group 7 do this too!
 
 
 # Call the main function to start the program
