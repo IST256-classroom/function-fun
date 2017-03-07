@@ -113,6 +113,13 @@ occurances of str_1 in str_2 and replace them by index in str_3 and return the s
 There are a couple of ways to do this
 '''
 # Group 4 Function Here
+def replace_letters_in_word(str1,str3):
+    str1 = str1.split(str3)
+    return str1
+str1 = 'abcdefghijk'
+str3 = 'e'
+output = replace_letters_in_word(str1,str3)
+print(output)
 
 
 '''
