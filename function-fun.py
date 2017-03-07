@@ -55,15 +55,10 @@ random_words= [
     ]
 
 
-def get_random_words():
-    computer = random.randint(0, len(random_words))
-    print(computer)
-    return random_words[computer]
-
-
-output = get_random_words()
-
-print(output)
+def get_random_word():
+    random_number = random.randint(0, len(random_words))
+    print(random_number)
+    return random_words[random_number]
 
 
 '''
@@ -73,12 +68,11 @@ them to see if they are equal. Return True if the are, False if they aren't
 '''
 # Group 2 Function Here
 
-def check_guessed_word(x,y):
-    if x==y:
-        print('true')
+def check_guessed_word(word_compare, compared_to):
+    if word_compare == compared_to:
+        return True
     else:
-        print('false')
-    return check_guessed_word
+        return False
 
 
 '''
@@ -90,14 +84,8 @@ str_1 is in str_2, or return false if its not
 def check_character_in_word(str_1, str_2):
     for c in str_2:
         if c == str_1:
-            return 'True'
-        elif c != str_1:
-            return 'False'
-
-str_1 = input("Enter a character: ")
-str_2 = input("Enter some text: ")
-y = check_character_in_word(str_1, str_2)
-print(y)
+            return True
+    return False
 
 
 '''
@@ -107,13 +95,14 @@ occurances of str_1 in str_2 and replace them by index in str_3 and return the s
 There are a couple of ways to do this
 '''
 # Group 4 Function Here
-def replace_letters_in_word(str1,str3):
-    str1 = str1.split(str3)
-    return str1
-str1 = 'abcdefghijk'
-str3 = 'e'
-output = replace_letters_in_word(str1,str3)
-print(output)
+def replace_letters_in_word(char, str_2, str_3):
+    split_str3 = list(str_3)
+    index = -1
+    for c in str_2:
+        index = index + 1
+        if c == char:
+            split_str3[index] = char
+    return "".join(split_str3)
 
 
 '''
@@ -126,9 +115,6 @@ a string with the same amount of _ as the original string: Ex: take example retu
 def generate_blanks(string1):
     num_blanks = '_' * len(string1)
     return num_blanks
-
-user_input = input("Enter text: ")
-print(generate_blanks(user_input))
 
 '''
 Group 6:
@@ -154,7 +140,7 @@ def main():
     letters_guessed = ""
 
     print("Welcome to the Word Guesser!")
-    
+    print(random_word)
     while True:
         print(guessed_word)
         '''
@@ -164,14 +150,23 @@ def main():
         guess = input("Please guess the word, or guess a letter: ")
         trys = trys + 1
         if len(guess) > 1:
-            # Group 7 work here!
-        else:
-            # Group 7 Work here!
-            if not "_" in guessed_word:
+            if check_guessed_word(random_word, guess):
                 break
+            else:
+                print("Wrong! Please try again")
+        else:
+            if guess in letters_guessed:
+                print("Your already chose that letter")
+            else:
+                if check_character_in_word(guess, random_word):
+                    guessed_word = replace_letters_in_word(guess, random_word, guessed_word)
+                else:
+                    print("Wrong!, Please choose another letter")
+                if not "_" in guessed_word:
+                    break
     
     print("Nice Work!")
-    # Print the result like "You guessed the word: 'example' in 10 trys" using format!
+    print("You guessed the word: {} in {} trys".format(random_word, trys))
     # Group 7 do this too!
 
 
