@@ -48,13 +48,37 @@ them to see if they are equal. Return True if the are, False if they aren't
 '''
 # Group 2 Function Here
 
+def check_guessed_word(x,y):
+    if x==y:
+        print('true')
+    else:
+        print('false')
+    return check_guessed_word
+x = input('please enter text:')
+y = input('please enter text:')
+result=check_guessed_word(x,y)
+<<<<<<< HEAD
 
+
+=======
+>>>>>>> 4036d2d1e7dceb559db1a8b033fbaf3129ffd82d
 '''
 Group 3:
 Write a function named check_character_in_word, It should take 2 str and return true if
 str_1 is in str_2, or return false if its not
 '''
 # Group 3 Function Here
+def check_character_in_word(str_1, str_2):
+    for c in str_2:
+        if c == str_1:
+            return 'True'
+        elif c != str_1:
+            return 'False'
+
+str_1 = input("Enter a character: ")
+str_2 = input("Enter some text: ")
+y = check_character_in_word(str_1, str_2)
+print(y)
 
 
 '''
@@ -80,6 +104,12 @@ a string with the same amount of _ as the original string: Ex: take example retu
 '''
 # Group 5 Function Here
 
+def generate_blanks(string1):
+    num_blanks = '_' * len(string1)
+    return num_blanks
+
+user_input = input("Enter text: ")
+print(generate_blanks(user_input))
 
 '''
 Group 6:
@@ -88,6 +118,9 @@ and return the new string.
 '''
 # Group 6 Function Here
 
+def save_guess(str_1, str_2):
+    new_str = (str_2 + str_1)
+    return(new_str)
 
 
 '''
